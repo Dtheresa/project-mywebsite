@@ -5,25 +5,54 @@
     <title>Song List</title>
 </head>
 <body>
-    <p>This is the song list</p>
-    <p>Song list can be found here</p>
     <div>
         <h1><a href="/">Song List</a> </h1>
+        <p>Song list under categories</p>
     </div>
 
     <div>
-        <h2><a href="">Song 1</a> </h2>
-        <p>Euphoria - BTS</p>
+        <h2>Country Songs</h2>
     </div>
 
-    <div>
-        <h2><a href="">Song 2</a> </h2>
-        <p>Coming Home - Skylar Grey</p>
-    </div>
+    {% for songs in country_songs %}
+        <div>
+            <h3><a href="">{{ songs.album_title }}</a> </h3>
+            <p>{{ songs.artist|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
     <div>
-        <h2><a href="">Song 3</a> </h2>
-        <p>Starboy - The Weeknd</p>
+        <h2>K-pop Songs</h2>
     </div>
+
+    {% for kpsongs in kpop_songs %}
+        <div>
+            <h3><a href="">{{ kpsongs.album_title }}</a> </h3>
+            <p>{{ kpsongs.artist|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+    <div>
+        <h2>Pop Songs</h2>
+    </div>
+
+    {% for popsongs in pop_songs %}
+        <div>
+            <h3><a href="">{{ popsongs.album_title }}</a> </h3>
+            <p>{{ popsongs.artist|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+    <div>
+        <h2>Rap Songs</h2>
+    </div>
+
+    {% for rapsongs in rap_songs %}
+        <div>
+            <h3><a href="">{{ rapsongs.album_title }}</a> </h3>
+            <p>{{ rapsongs.artist|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
 </body>
 </html>
