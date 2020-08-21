@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+</head>
+<body>
+    <div>
+        <h1><a href="/">Book List</a> </h1>
+    </div>
+    <p>The books are listed under categories</p>
+
+    <div>
+        <h2>Completed</h2>
+    </div>
+    {% for comp_book in comp_book %}
+        <div>
+            <h3><a href="">{{comp_book.book_title}}</a> </h3>
+            <p>{{ comp_book.author|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+    <div>
+        <h2>Current Read</h2>
+    </div>
+    {% for cr_book in cr_book %}
+        <div>
+            <h3><a href="">{{cr_book.book_title}}</a> </h3>
+            <p>{{ cr_book.author|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+    <div>
+        <h2>TBR</h2>
+    </div>
+    {% for tbr_book in tbr_book %}
+        <div>
+            <h3><a href="">{{tbr_book.book_title}}</a> </h3>
+            <p>{{ tbr_book.author|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+</body>
+</html>
